@@ -1,7 +1,10 @@
 import math
 import string
-from techniques import twoPointer as tp
-from tp import check_if_palindrome, sorted_array_2_sum, combine_sorted_arrays
+from dataStructures.techniques.twoPointer import (
+    check_if_palindrome,
+    sorted_array_2_sum,
+    combine_sorted_arrays,
+)
 
 def main():
    myInt = int('7f', 16) # evaluates to integer 127
