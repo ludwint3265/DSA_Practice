@@ -14,8 +14,8 @@ def main():
    
    # Two pointers testing
    # palindrome checking
-   print("racecar is a palindrome:", check_if_palindrome("racecar".lower()))
-   print("fergus is a palindrome:", check_if_palindrome("fergus".lower()))
+   print("racecar is a palindrome:", check_if_palindrome("racecar"))
+   print("fergus is a palindrome:", check_if_palindrome("fergus"))
 
    # sorted array 2 sum
    print("2 sum in sorted array [1,2,4,6,8,9,14,15] for target 13:", sorted_array_2_sum([1,2,4,6,8,9,14,15], 13))
