@@ -41,8 +41,14 @@ def twoSum(self, nums: list[int], target: int) -> list[int]:
         seen = {} # map value:index
 
         for i, num in enumerate(nums):
+
+            # trying to find if we have already seen the value
             curr = target - num
             if curr in seen:
+
+                # if the current value is already in seen, then it's accounted for, thus we have both values that add to target
                 return [seen[curr], i]
+
+            # if curr isn't seen, it's added to the seen dict
             seen[num] = i
         return
