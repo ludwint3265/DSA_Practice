@@ -36,3 +36,13 @@ def hasDuplicate(self, nums: list[int]) -> bool:
                 return True
             seen.add(num)
         return False
+
+def twoSum(self, nums: list[int], target: int) -> list[int]:
+        seen = {} # map value:index
+
+        for i, num in enumerate(nums):
+            curr = target - num
+            if curr in seen:
+                return [seen[curr], i]
+            seen[num] = i
+        return
