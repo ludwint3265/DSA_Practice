@@ -52,3 +52,33 @@ def twoSum(self, nums: list[int], target: int) -> list[int]:
             # if curr isn't seen, it's added to the seen dict
             seen[num] = i
         return
+
+from collections import defaultdict
+def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+
+    res = defaultdict(list)
+# Creates a dictionary where each key maps to a list.
+# When a key is accessed for the first time, defaultdict calls list()
+# to create a new empty list as the value.
+
+    for s in strs:
+        count = [0] * 26
+    # Initializes a fixed-size list of 26 zeros.
+    # Each index represents the frequency of a letter from 'a' to 'z'.
+
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        # ord(c) gives the integer code of the character.
+        # Subtracting ord('a') maps:
+        # 'a' -> 0, 'b' -> 1, ..., 'z' -> 25
+        # This allows each character to increment its corresponding index
+        # in the frequency array.
+
+        res[tuple(count)].append(s)
+    # Converts the frequency list into a tuple so it can be used as a dictionary key.
+    # Tuples are immutable and hashable, unlike lists.
+    # All anagrams produce the same frequency tuple, so they map to the same key.
+
+    return list(res.values())
+# Returns only the grouped anagram lists, discarding the keys.
+# The result matches the required List[List[str]] output format.
