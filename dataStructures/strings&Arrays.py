@@ -82,3 +82,18 @@ def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
     return list(res.values())
 # Returns only the grouped anagram lists, discarding the keys.
 # The result matches the required List[List[str]] output format.
+
+def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+        count = {}
+        for num in nums:
+            count[num] = 1 + count.get(num, 0)
+
+        arr = []
+        for num, cnt in count.items():
+            arr.append([cnt, num])
+        arr.sort()
+
+        res = []
+        while len(res) < k:
+            res.append(arr.pop()[1])
+        return res
