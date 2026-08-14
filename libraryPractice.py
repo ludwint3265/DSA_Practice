@@ -55,7 +55,7 @@ df = pd.DataFrame(
 print(df)
 # Each column in a DataFrame is a Series
 
-# Print 
+# Print only the age column of the existing DataFrame
 print(df["Age"])
 
 my_ages = pd.Series([20,70,40,30], name = "Ages")
